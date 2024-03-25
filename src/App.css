@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ .updatecard {
+    background: #0000001a;
+    backdrop-filter: blur(3.2px);
+    padding: 40px;
+    border-radius: 30px;
   }
+  .updateborder {
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.updateborder::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background: linear-gradient(
+    231.49deg,
+    rgba(255, 255, 255, 0) -0.51%,
+    rgba(218, 43, 85, 0.3479) 83.2%
+  );
+  z-index: -1;
 }
-
-.App-link {
-  color: #61dafb;
+.updatebg {
+  background-image: url("./assets/images/updatebg.webp");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-box {
+  outline: 0;
+}
+.input-box:focus {
+  border: 1px solid transparent;
+  background-image: linear-gradient(#292b27, #292b27),
+    linear-gradient(151.6deg, #d4145a66 1.85%, #fbb03b66 98.12%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+  accent-color: white;
+}
+input {
+  max-width: 310px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.placeholdertext {
+  background: #ffffff1a;
+  border: 1px solid #ffffff29;
+  border-radius: 8px;
+  padding: 20px 0 20px 12px;
+  color: #bbbcbb !important;
+}
+::placeholder {
+  color: #ffffffb0;
+  font-size: 14px;
+  font-family: "Roboto Flex", sans-serif;
+  position: relative;
+  z-index: 3;
+}
+.playbtn {
+  padding: 16px 32px !important;
+}
+.navbtn {
+  background: linear-gradient(151.6deg, #d4145a 1.85%, #fbb03b 98.12%);
+  padding: 12px 32px;
+  border-radius: 261px;
+  transition: all 300ms linear;
+  border: none;
+}
+.navbtn:hover {
+  background: linear-gradient(151.6deg, #d4145a 50.85%, #fbb03b 90.12%);
 }
